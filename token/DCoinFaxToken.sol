@@ -2,19 +2,19 @@ pragma solidity ^0.4.24;
 
 import "./PausableToken.sol";
 
+/**
+ * @title DCoinFax Token
+ */
 contract DCoinFaxToken is PausableToken {
-    // Public variables of the token
     string public constant name = "DCoinFax Token";
     string public constant symbol = "DFXT";
     uint8 public constant decimals = 18;
-    uint256 public constant initialSupply = 5000000000;
-    // 18 decimals is the strongly suggested default, avoid changing it
-    uint256 public totalSupply = initialSupply * 10 ** uint256(decimals);
+    uint256 public totalSupply = 50 * 10000 * 10000 * (10 ** uint256(decimals));
 
     /**
      * Constructor function
      *
-     * Initializes contract with initial supply tokens to the creator of the contract
+     * Initializes contract with initial supply tokens to the initialTokenOwner
      */
     constructor (
         address initialTokenOwner
